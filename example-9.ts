@@ -1,5 +1,3 @@
-
-
 // Currently the function below uses a string for
 // for the type of monster. Better to use an enum
 // since monsters are only: lizard, flying, or ape
@@ -8,30 +6,32 @@
 
 // Fix the rampage function so it makes use of the KaijuType enum
 
-function rampage(kaiju, city) {
-	const { name, type, power } = kaiju
-	let action: string
-	switch(type) {
-		case 'ape': 
-			action = 'smash'
-			break
+import { Kaiju, KaijuType } from "./example-8";
 
-		case 'lizard':
-			action = 'burn'
-			break
+function rampage(kaiju: Kaiju, city: string): string {
+  const { name, type, power } = kaiju;
+  let action: string;
+  switch (type) {
+    case KaijuType.Ape:
+      action = "smash";
+      break;
 
-		case 'flying': 
-			action = 'flap'	
-			break
-	} 
-	let result = `${name} ${action} over ${city} causing ${power * 10000} damage!`
-	return result
+    case KaijuType.Lizard:
+      action = "burn";
+      break;
+
+    case KaijuType.Flying:
+      action = "flap";
+      break;
+  }
+  let result = `${name} ${action} over ${city} causing ${
+    power * 10000
+  } damage!`;
+  return result;
 }
 
-const gojira = new Kaiju('Gojira', 90, KaijuType.lizard)
+const gojira = new Kaiju("Gojira", 90, KaijuType.Lizard);
 // Define two more monsters
 
-
-console.log(rampage(gojira, 'tokyo'))
+console.log(rampage(gojira, "tokyo"));
 // Set the new monsts to rampage in a city
-

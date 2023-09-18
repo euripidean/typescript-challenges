@@ -1,20 +1,17 @@
 // This function returns a function that returns a string
 // Add the types:
-
-function sayHello(): () => string {
-  return () => "Hello!";
+function sayHello() {
+    return function () { return "Hello!"; };
 }
 // This variable contains a function that returns a string
-const hello: () => string = sayHello();
+var hello = sayHello();
 // Calling the function returns the string
 console.log(hello()); // Hello!
-
-function mathematizer(n: number): (x: number) => number {
-  //   let sum = n; This isn't doing anything.
-  return (x: number) => x * n;
+function mathematizer(n) {
+    //   let sum = n; This isn't doing anything.
+    return function (x) { return x * n; };
 }
-
-const m = mathematizer(3);
+var m = mathematizer(3);
 console.log(m(3)); // 9
 console.log(m(2)); // 6
 console.log(m(10)); // 30
