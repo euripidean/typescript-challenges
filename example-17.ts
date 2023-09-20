@@ -1,9 +1,17 @@
+import { Kaiju, KaijuType } from "./example-8";
+
+interface Robot extends Kaiju {
+  name: string;
+  power: number;
+  type: KaijuType;
+}
+
 // Giant Robot class
+class GiantRobot extends Kaiju implements Robot {
+  constructor(name: string, power: number, type: KaijuType) {
+    super(name, power, type);
+  }
+}
 
-// Goal creat an interface with a methods 
-
-// All Robots have name, power and type. 
-// Kaiju should have a describe method that 
-// prints: name:<name> type:<type> power:<power>
-
-
+const biggieSmalls = new GiantRobot("Biggie Smalls", 100, KaijuType.Flying);
+console.log(biggieSmalls.describe());

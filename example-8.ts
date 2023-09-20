@@ -10,9 +10,9 @@
 // Kaiju class that initializes it's properties!
 
 enum KaijuType {
-  Lizard,
-  Flying,
-  Ape,
+  Lizard = "Lizard",
+  Flying = "Flying",
+  Ape = "Ape",
 }
 
 class Kaiju {

@@ -11,9 +11,9 @@ exports.KaijuType = exports.Kaiju = void 0;
 // Kaiju class that initializes it's properties!
 var KaijuType;
 (function (KaijuType) {
-    KaijuType[KaijuType["Lizard"] = 0] = "Lizard";
-    KaijuType[KaijuType["Flying"] = 1] = "Flying";
-    KaijuType[KaijuType["Ape"] = 2] = "Ape";
+    KaijuType["Lizard"] = "Lizard";
+    KaijuType["Flying"] = "Flying";
+    KaijuType["Ape"] = "Ape";
 })(KaijuType || (exports.KaijuType = KaijuType = {}));
 var Kaiju = /** @class */ (function () {
     function Kaiju(name, power, type) {

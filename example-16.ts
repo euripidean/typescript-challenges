@@ -33,8 +33,8 @@ console.log(fill({}, 11));
 // Shuffle randomizes an array. Since can` contain
 // any type use a generic to return an array of
 // the generic type
-function shuffle(arr) {
-  const arrCopy = [...arr];
+function shuffle<T>(arr: Array<T>): Array<T> {
+  const arrCopy: Array<T> = [...arr];
   arrCopy.sort(() => 0.5 - Math.random());
   return arrCopy;
 }
@@ -43,9 +43,9 @@ function shuffle(arr) {
 const arr3 = ["a", "b", "c", "d"];
 console.log(shuffle(arr3));
 
-// This functions takes an array and returns a function.
+// This function takes an array and returns a function.
 // The function returns the next item in the array.
-function iterate(arr) {
+function iterate<T>(arr: Array<T>): () => T {
   let i = 0;
   return () => {
     i += 1;
